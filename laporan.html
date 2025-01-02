@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Clustering</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #16a085;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-left: 20px;
+            display: none;
+            font-size: 1.1em;
+            line-height: 1.5em;
+        }
+
+        .cluster-container {
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cluster-container:hover {
+            background-color: #ecf0f1;
+        }
+
+        .button {
+            padding: 10px 15px;
+            background-color: #16a085;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #1abc9c;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Laporan Hasil Clustering</h1>
+    <p style="text-align: center;">Data diproses dan dianalisis dengan metode TF-IDF dan algoritma KMeans untuk membuat
+        3, 4, dan 5 klaster.</p>
+    <h2>Analisis</h2>
+    <div class="cluster-container">
+        <h3 onclick="toggleVisibility('cluster3')">Hasil Clustering (3 Klaster)</h3>
+        <p id="cluster3">
+            Klaster 1: eben, radadi, ora<br>
+            Klaster 2: dihapus, pesan, ini<br>
+            Klaster 3: disertakan, media, tidak
+        </p>
+    </div>
+
+    <div class="cluster-container">
+        <h3 onclick="toggleVisibility('cluster4')">Hasil Clustering (4 Klaster)</h3>
+        <p id="cluster4">
+            Klaster 1: eben, radadi, ora<br>
+            Klaster 2: dihapus, pesan, ini<br>
+            Klaster 3: media, disertakan, tidak<br>
+            Klaster 4: pengumuman, yuliarsih, kick
+        </p>
+    </div>
+
+    <div class="cluster-container">
+        <h3 onclick="toggleVisibility('cluster5')">Hasil Clustering (5 Klaster)</h3>
+        <p id="cluster5">
+            Klaster 1: eben, radadi, yuliarsih<br>
+            Klaster 2: dihapus, pesan, ini<br>
+            Klaster 3: alhamdulillah, mas, ya<br>
+            Klaster 4: pengumuman, yuliarsih, kick<br>
+            Klaster 5: disertakan, media, tidak
+        </p>
+    </div>
+
+    <button class="button" onclick="scrollToTop()">Kembali ke Atas</button>
+
+    <script>
+        function toggleVisibility(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+</body>
+
+</html>
